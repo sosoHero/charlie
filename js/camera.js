@@ -31,8 +31,7 @@
                 img.one("load", queueRefresh);
                 img.one("error", function () {
                     console.log("camera.onError(): " + src);
-                    random = Math.floor(Math.random() * Math.pow(2, 31));
-                    img.attr('src', src + '?i=' + random);
+                    queueRefresh();
                 });
             };
 
